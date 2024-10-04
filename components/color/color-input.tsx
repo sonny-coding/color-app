@@ -22,7 +22,7 @@ const ColorInput = ({ placeholder }: ColorInputProps) => {
   };
   return (
     <input
-      className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+      className="p-4 w-full text-3xl focus:outline-none focus:ring-offset-0 rounded-lg shadow-md bg-whiteLilac"
       type="text"
       placeholder={placeholder}
       onChange={(e) => {

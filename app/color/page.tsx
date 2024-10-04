@@ -2,9 +2,8 @@ import { Suspense } from "react";
 
 import ColorInput from "@/components/color/color-input";
 import ColorDisplay from "@/components/color/color-display";
-// import ColorSubmit from "../../components/color/color-submit";
 import { isValidHex } from "@/utils/color-helper";
-import ColorName from "@/components/color/color-name";
+import ColorInfo from "@/components/color/color-info";
 
 type PageProps = {
   searchParams: {
@@ -21,14 +20,14 @@ const Page = ({ searchParams }: PageProps) => {
   return (
     <div
       className="flex flex-col items-center justify-center min-h-screen p-4"
-      style={{ backgroundColor: isValidHex(query) ? query : "#000000" }}
+      // style={{ backgroundColor: isValidHex(query) ? query : "#ffffff" }}
     >
       <div className="w-full max-w-md space-y-4 bg-white">
-        <ColorInput placeholder="type something..." />
+        <ColorInput placeholder="#ffffff" />
         <ColorDisplay query={query} />
         {isValidHex(query) && (
           <Suspense fallback={<Loading />}>
-            <ColorName query={query.slice(1)} />
+            <ColorInfo query={query.slice(1)} />
           </Suspense>
         )}
 
